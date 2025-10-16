@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARI Ювелірні Прикраси – Марія Черкас | marisilver.gold</title>
+    <meta name="description" content="Авторські ювелірні прикраси MARI від Марії Черкас. Золото та срібло, індивідуальні замовлення. Черкаси.">
+    
+    <style>
+        /* ОСНОВНІ СТИЛІ ТА КОЛЬОРОВА ГАМА */
+        :root {
+            --color-primary: #D32F2F; /* Глибокий Червоний (Акцент) */
+            --color-secondary: #FFC107; /* Золотий (Металік Акцент) */
+            --color-text: #333333; /* Темний Текст */
+            --color-light: #FFFFFF; /* Білий Фон */
+            --color-background: #FAF3F2; /* Світло-рожевий/персиковий фон (як на вашому лого) */
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-light);
+            scroll-behavior: smooth;
+        }
+
+        /* ШАПКА (HEADER) */
+        .header {
+            background-color: var(--color-light);
+            padding: 15px 5%;
+            border-bottom: 2px solid var(--color-background);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--color-text);
+            display: block;
+        }
+
+        .nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ГЕРО-СЕКЦІЯ */
+        .hero {
+            background-color: var(--color-background);
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+        
+        .hero h2 {
+            font-size: 1.5em;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            border: 2px solid var(--color-primary);
+        }
+
+        .cta-button:hover {
+            background-color: #A50000;
+            transform: translateY(-2px);
+        }
+        
+        /* СЕКЦІЇ КОНТЕНТУ */
+        .section {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-light {
+            background-color: var(--color-light);
+        }
+        
+        .section-colored {
+            background-color: var(--color-background);
+        }
+
+        .section h3 {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* ГАЛЕРЕЯ (ПРИКЛАДИ РОБІТ) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* КОНТАКТИ */
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 30px;
+            color: var(--color-secondary); /* Використовуємо Золотий для іконок соцмереж */
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ПІДВАЛ (FOOTER) */
+        .footer {
+            background-color: var(--color-text);
+            color: var(--color-light);
+            text-align: center;
+            padding: 20px 5%;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: var(--color-secondary);
+            text-decoration: none;
+        }
+
+        /* АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            .nav {
+                margin-top: 10px;
+            }
+            .nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <span class="logo-text">MARI<span style="color: var(--color-secondary);">.</span></span> 
+            <span class="logo-subtext">ЮВЕЛІРНІ ПРИКРАСИ</span>
+        </div>
+        <nav class="nav">
+            <a href="#about">Про мене</a>
+            <a href="#gallery">Каталог</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <h1>Авторські Прикраси Від Марії Черкас</h1>
+            <h2>Срібло, Золото та індивідуальність. Створено в серці Черкас.</h2>
+            <a href="#gallery" class="cta-button">Переглянути Колекцію</a>
+        </section>
+
+        <section id="about" class="section section-light">
+            <h3>Філософія Бренду MARI</h3>
+            <p><strong>MARI</strong> — це маленький світ великих ідей. Мене звати Марія, і я створюю не просто прикраси, а символи, які підкреслюють Вашу унікальність.</p>
+            <p>Кожен виріб — від мінімалістичної каблучки зі срібла до ексклюзивного золотого кольє на замовлення — проходить через ретельний процес розробки та ручної роботи. Я використовую лише перевірені, якісні матеріали, щоб Ваша прикраса тішила Вас роками. Моя місія — дарувати емоції та створювати сімейні реліквії.</p>
+            <p style="margin-top: 20px;"><em>Особливість: індивідуальні ескізи та переплавка металу за бажанням клієнта.</em></p>
+        </section>
+
+        <section id="gallery" class="section section-colored">
+            <h3>Вибрані Роботи</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="jewelry_placeholder_1.jpg" alt="Каблучка з діамантом"></div>
+                <div class="gallery-item"><img src="jewelry_placeholder_2.jpg" alt="Срібні сережки-краплі"></div>
+                <div class="gallery-item"><img src="jewelry_placeholder_3.jpg" alt="Браслет із золотими вставками"></div>
+                <div class="gallery-item"><img src="jewelry_placeholder_4.jpg" alt="Кулон-підвіска на замовлення"></div>
+                </div>
+            <p style="text-align: center; margin-top: 40px;">Повний асортимент представлено на нашій сторінці в Instagram!</p>
+        </section>
+
+        <section id="contact" class="section section-light">
+            <h3>Зв'яжіться зі Мною</h3>
+            <div class="contact-info">
+                <p>Майстер: <strong>Марія Черкас</strong></p>
+                
+                <p>Телефон: <a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a></p>
+                <p>Email: <a href="mailto:info@marisilver.gold">info@marisilver.gold</a></p>
+                <p>Адреса для консультацій (за попереднім записом): м. Черкаси</p>
+                
+                <p style="margin-top: 30px;">Слідкуйте за новинками та процесом створення:</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Instagram">📸</a> 
+                    <a href="#" target="_blank" title="Facebook">📘</a> 
+                    <a href="#" target="_blank" title="Telegram">✈️</a> 
+                </div>
+                <a href="mailto:info@marisilver.gold" class="cta-button" style="margin-top: 30px;">Написати Запит</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        &copy; 2025 MARI Ювелірні Прикраси. Усі права захищено. <br>
+        Сайт-візитівка на домені <a href="http://marisilver.gold" target="_blank">marisilver.gold</a>
+    </footer>
+
+</body>
+</html>
